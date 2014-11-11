@@ -1,0 +1,4 @@
+[DEFAULT]
+git_gc = git gc "$@"
+
+include = cat $HOME/.config/myrepos/*.conf 2>/dev/null || true
