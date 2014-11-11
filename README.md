@@ -53,3 +53,17 @@ In `~/.config/myrepos/dotfiles.conf`:
     
     push =
       vcsh dotfiles push
+
+## Notes
+
+If you are using [Emacs](http://www.gnu.org/software/emacs/) with
+[magit](http://magit.github.io/), you may want to add following piece of
+code in you configuration:
+
+    ;; http://lists.madduck.net/pipermail/vcs-home/2013-August/000880.html
+    (add-to-list 'tramp-methods
+    	     '("vcsh"
+    	       (tramp-login-program "vcsh")
+    	       (tramp-login-args (("enter") ("%h")))
+    	       (tramp-remote-shell "/bin/sh")
+    	       (tramp-remote-shell-args ("-c"))))
