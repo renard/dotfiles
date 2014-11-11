@@ -21,6 +21,12 @@ fi
 
 export PYTHONPATH="$(brew --prefix)/lib/python2.7/site-packages:$PYTHONPATH"
 
+PYENV_ROOT=/opt/pyenv
+if test -d $PYENV_ROOT; then
+    export PYENV_ROOT
+    eval "$(pyenv init -)"
+fi
+
 
 if [ -e "$HOME/.rbenv/bin" ]; then
     export PATH="$HOME/.rbenv/bin:$PATH"
